@@ -29,8 +29,6 @@ if num_of_loadouts == "infinite":
   sleep(0.5)
   print("Hehe...")
   sleep(3)
-  print("Bye bye pc")
-  sleep(0.5)
   while True:
     print(f"{generate_random_loadout()}")
     print(" ")
