@@ -1,5 +1,5 @@
-import random
-import time
+from random import choice
+from time import sleep
 import os
 
 def generate_random_loadout():
@@ -21,17 +21,21 @@ def generate_random_loadout():
     "Machine Gun", "Anti-Materiel Rifle", "Stalwart", "Expendable Anti-Tank", "Recoilless Rifle", "Flamethrower", "Autocannon", "Heavy Machine Gun", "Airburst Rocket Launcher", "Commando", "Railgun", "Spear", "Orbital Gatling Barrage", "Orbital Airburst Strike", "Orbital 120MM HE Barrage", "Orbital 380MM HE Barrage", "Orbital Waling Barrage", "Orbital Laser", "Orbital Railcannon Strike" "Eagle Strafing Run", "Eagle Airstrike", "Eagle Cluster Bomb", "Eagle Napalm Airstrike", "Eagle 110MM Rocket Pods", "Eagle 500KG Bomb", "Orbital Precision Strike", "Orbital Gas Strike", "Orbital EMS Strike", "Orbital Smoke Strike", "HMG Emplacement", "Shield Generator Relay", "Tesla Tower", "Anti-Personnel Minefield", "Supply Pack", "Grenade Launcher", "Laser Cannon", "Incendiary Mines", "\"Guard Dog\" Rover", "Ballistic Shield Backpack", "Arc Thrower", "Anti-Tank Mines", "Quasar Cannon", "Shield Generator Pack", "Machine Gun Sentry", "Gatling Sentry", "Mortar Sentry", "\"Guard Dog\"", "Autocannon Sentry", "Rocket Sentry", "EMS Mortar Sentry", "Patriot Exosuit", "Emancipator Exosuit"]
   booster = [
     "Vitality Enhancement", "Stamina Enhancement", "Muscle Enhancement", "UAV Recon Booster", "Increased Reinforcement Budget", "Hellpod Space Optimization"]
-  return "Primary: " + random.choice(gun) + "\nSecondary: " + random.choice(gun2) + "\nThrowable: " + random.choice(grenade) + "\nArmor Passive: " + random.choice(armor_passive) + "\nStratagem One: " + random.choice(stratagem_1) + "\nStratagem Two: " + random.choice(stratagem_2) + "\nStratagem Three: " + random.choice(stratagem_3) + "\nStratagem Four: " + random.choice(stratagem_4) + "\nBooster: " + random.choice(booster)
+  return "Primary: " + choice(gun) + "\nSecondary: " + choice(gun2) + "\nThrowable: " + choice(grenade) + "\nArmor Passive: " + choice(armor_passive) + "\nStratagem One: " + choice(stratagem_1) + "\nStratagem Two: " + choice(stratagem_2) + "\nStratagem Three: " + choice(stratagem_3) + "\nStratagem Four: " + choice(stratagem_4) + "\nBooster: " + choice(booster)
 print("How many loadouts do you want to generate?\n")
-choice = input("> ")
+num_of_loadouts = input("> ")
 print("")
-if choice == "infinite":
-  time.sleep(0.5)
+if num_of_loadouts == "infinite":
+  sleep(0.5)
   print("Hehe...")
-  time.sleep(2)
+  sleep(3)
+  print("Bye bye pc")
+  sleep(0.5)
   while True:
     print(f"{generate_random_loadout()}")
+    print(" ")
 else:
-  for i in range(int(choice.strip())):
+  for i in range(int(num_of_loadouts.strip())):
     print(f"{generate_random_loadout()}")
     os.system('pause')
+    print(" ")
